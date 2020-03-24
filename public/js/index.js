@@ -18,9 +18,12 @@ weatherForm.addEventListener('submit',(e)=>{
       } else{
         const location = data.location
         const temp = data.data.curentTemp
+        const windSpeed = data.data.windSpeed
+        const summaryInfo = data.data.summary
+        const uvIndex = data.data.uvIndex
         // console.log(data)
         errorText.textContent =''
-        resultText.textContent = `${location} curent temperature ${temp}`
+        resultText.textContent = `${location} curent temperature ${temp} wind speed ${windSpeed} info ${summaryInfo} and uv index ${uvIndex}`
       }
     })
   })

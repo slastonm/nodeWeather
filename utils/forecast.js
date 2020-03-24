@@ -9,12 +9,13 @@ const forecast = (latitude, longitude, callback) => {
       const getData = newData
       const curentTemp = getData.currently.temperature
       const windSpeed = getData.currently.windSpeed
-  
-      // console.log(`curent temperature ${curentTemp} deegrees and wind speed is ${windSpeed}`)
-
+      const summaryInfo = getData.currently.summary
+      const uvIndex = getData.currently.uvIndex
       callback({
         curentTemp,
-        // getData
+        windSpeed,
+        summaryInfo,
+        uvIndex
       })
     })
     .catch(function (error) {
