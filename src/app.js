@@ -9,7 +9,7 @@ console.log(__dirname)
 // console.log(path.join(__dirname, '../public'))
 
 const app = express()
-
+const port = process.env.PORT || 8080
 //Define path for config
 const viewPath = path.join(__dirname, '../templates/views')
 const publicDir = path.join(__dirname, '../public')
@@ -68,6 +68,6 @@ app.get('*',(req, res) => {
   res.render('404')
 })
 
-app.listen(8080, ()=>{
-  console.log('server run on port 8080')
+app.listen(port, ()=>{
+  console.log(`server run on port ${port}`)
 })
